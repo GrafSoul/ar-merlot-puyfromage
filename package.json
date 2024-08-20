@@ -1,0 +1,19 @@
+{
+  "name": "ar-merlot-puyfromage",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.3.4",
+    "vite-plugin-mkcert": "^1.17.6"
+  },
+  "dependencies": {
+    "aframe": "^1.6.0",
+    "aframe-ar": "^0.2.1-a"
+  }
+}

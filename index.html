@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AR - Merlot - Puyfromage</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+    <script src="https://libs.zappar.com/zappar-aframe/2.0.0/zappar-aframe.js"></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+
+  <body>
+    <a-scene>
+      <!-- Ask user for camera permissions -->
+      <a-entity zappar-permissions-ui id="permissions"></a-entity>
+
+      <!-- Browser Compatibility -->
+      <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
+
+      <a-assets>
+        <a-asset-item
+          id="target-wine-2"
+          src="./targets/wine_2.zpt"></a-asset-item>
+        <a-asset-item
+          id="wine-two-glb"
+          src="./models/hiphop.glb"></a-asset-item>
+        <audio id="background-music" src="./sound/hiphop.mp3"></audio>
+      </a-assets>
+
+      <a-entity camera zappar-camera></a-entity>
+
+      <a-entity zappar-image="target: #target-wine-2" id="image-group">
+        <a-entity
+          look-controls
+          position="0 -0.5 0"
+          gltf-model="#wine-two-glb"
+          animation-mixer="clip: *;"></a-entity>
+        <a-entity
+          sound="src: #background-music; autoplay: false; loop: true"
+          id="sound-entity"></a-entity>
+      </a-entity>
+    </a-scene>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
